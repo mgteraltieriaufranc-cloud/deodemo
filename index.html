@@ -2,34 +2,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuidado Oncológico - Triage</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Instrument Sans', sans-serif;
-            background-color: #FDF6F0; /* Soft beige */
-        }
-        h1, h2, h3 {
-            font-family: 'Outfit', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Triage Oncológico</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 <script type="importmap">
 {
   "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
     "react": "https://esm.sh/react@^19.2.4",
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
     "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
   }
 }
 </script>
 </head>
 <body>
-    <div id="root"></div>
+
+  <div class="container">
+    <h1>Estamos para ayudarte</h1>
+    <p class="subtitle">
+      Completá estos datos y el equipo ya queda avisado.
+    </p>
+
+    <form id="triageForm">
+      <input type="text" placeholder="Nombre y apellido" required />
+      <input type="text" placeholder="Motivo de consulta" required />
+
+      <select required>
+        <option value="">Nivel de urgencia</option>
+        <option>Baja</option>
+        <option>Media</option>
+        <option>Alta</option>
+      </select>
+
+      <button type="submit">Enviar y quedarme tranquilo/a</button>
+    </form>
+
+    <p id="mensaje" class="ok"></p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
